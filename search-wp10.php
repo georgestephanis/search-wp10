@@ -61,7 +61,8 @@ class Search_WP10 {
 			'lon' => floatval( $_REQUEST['longitude'] ),
 		);
 
-		wp_die( json_encode( $meetup->get( '/ew/events', $params ) ) );
+		header( 'Content-type: application/json' );
+		die( json_encode( $meetup->get( '/ew/events', $params ) ) );
 	}
 
 }
